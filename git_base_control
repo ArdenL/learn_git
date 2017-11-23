@@ -28,3 +28,4 @@ git log [--graph --pretty=oneline --abbrev-commit]:show detail of merge
 
 git config --global user.email "your_mail"
 git config --global user.name "your_name"
+--test2
