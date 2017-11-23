@@ -1,0 +1,22 @@
+git init:initialization the current folder was a git's repository
+git add <file_name>:take the file to repository
+git commit -m "message":commit and take message
+cat <file_name>:show detail
+ssh-keygen -t rsa -C "your_mail":create a ssh-key in your computer
+
+git status:show all of your file's status
+git diff <file_name>:show all of your file's difference
+git diff HEAD -- <file_name>:show all difference about work_space and version_space's recently file
+git log [--pretty=oneline]:show about recently commit
+git reset --hard [HEAD[^|~num]|commit_id]:reback to early version
+git reflog:record all of your command
+git checkout -- <file_name>:repeal work_space's file change
+git reset HEAD <file_name>:repeal ready_work's change and return to work_space
+git rm <file_name>:remove the file of your repository
+
+git remote add <local_name> git@github.com:<user_name>/<git_name>.git:add remote repository to your local
+git push -u <local_name> master:push your master to remote
+
+
+git config --global user.email "your_mail"
+git config --global user.name "your_name"
