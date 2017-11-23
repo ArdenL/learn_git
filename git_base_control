@@ -19,10 +19,11 @@ git push -u <local_name> master:push your master to remote,pull first
 git clone git@github.com:<uesr_name>/<git_name>.git
 
 git checkout -b <branch_name>:create a branch, and switchover to the branch
+git checkout -b <branch_name> <remote_repository_name>/<branch_name>:create and checkout remote branch
 git branch <branch_name>:create a branch
 git checkout <branch_name>:switchover branch
 git branch: checkout current branch
-git brahcn --set-upstream test1 <remote_repository_name>/<branch_name>:set local branch connect remote 
+git brahcn --set-upstream test1 <remote_repository_name>/<branch_name>:set local branch connect remote
 git merge [--no-ff] [-m "message"] <branch_name>:merge the branch to current branch[disable Fast Forward][message]
 git branch -d[-D] <branch_name>:delete the branch[force delete]
 git log [--graph --pretty=oneline --abbrev-commit]:show detail of merge
@@ -35,6 +36,16 @@ git stash pop:recover work_space and drop temp branch
 
 git remote [-v]:show about your remote[detail]
 git push <remote_repository_name> <branch_name>:push target branch to the remote
+
+git tag <tag_name>:set current tag
+git tag:show all tag
+git tag <tag_name> <commit_id>:set target commit_id and it's tag
+git show <tag_name>:show detail of tag
+git tag -a <tag_name> -m <"message"> <commit_id>:taget tag,set message
+git tag -d <tag_name>:drop tag
+git push <remote_repository_name> <tag_name>:push taget tag to remote
+git push <remote_repository_name> --tags:push all tag
+git push <remote_repository_name> :refs/tags/<tag_name>:first drop local tag,and push this
 
 git config --global user.email "your_mail"
 git config --global user.name "your_name"
