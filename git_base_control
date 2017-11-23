@@ -16,7 +16,15 @@ git rm <file_name>:remove the file of your repository
 
 git remote add <local_name> git@github.com:<user_name>/<git_name>.git:add remote repository to your local
 git push -u <local_name> master:push your master to remote
+git clone git@github.com:<uesr_name>/<git_name>.git
 
+git checkout -b <branch_name>:create a branch, and switchover to the branch
+git branch <branch_name>:create a branch
+git checkout <branch_name>:switchover branch
+git branch: checkout current branch
+git merge <branch_name>:merge the branch to current branch
+git branch -d <branch_name>:delete the branch
+git log [--graph --pretty=oneline --abbrev-commit]:show detail of merge
 
 git config --global user.email "your_mail"
 git config --global user.name "your_name"
