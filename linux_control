@@ -1,0 +1,114 @@
+Linux operation command：
+    Close System:
+        sync: save data in to disk
+        shutdown [-h|-r] [date|now|time] ["message"]
+        reboot: instead shutdown -r now
+        halt: instead shutdown -h now
+        poweroff: as halt
+        init 0: as halt
+        intit 6: as reboot
+
+    take ssh login servers:
+        yum install ssh: install ssh tool
+        service sshd start: start ssh connection
+        ssh -p <port> <servers_name>@<ip>: connect servers
+
+    property of file or directory:
+        ls -l: show attribute, belong user or group
+            [d] is directory
+            [-] is file
+            [l] is link file
+            [b] is can read and wrote device
+            [c] is mouse or keyboard
+            filetype    user    group   other user
+            0           123     456     789
+            d           rwx     r-x     r-x
+            directory   read-write-execute
+        chgrp [-R] <group> <file>: change it belong who is other group[and all children]
+        chown [-R] <user> <file>: change it belong who is other user
+        chown [-R] <user>:<group> <file>
+        chmod [-R] <xyz> <file|dir>: change the file type[xyz is authority:770]
+            r:read 4 w:write:2 x:execute 1
+        chmod [-R] <u|g|o|a> <+|-|=> <r|w|x> <file|dir>:
+            u:user, g:group, o:other, a:all
+            +: add, -: reduce =: set
+
+    manage file and dir:
+        absolute path-relative path
+
+        ls [-aAdfFhilnrRSt] <dir>: list the file detail or more
+            -a: all, and all of hidden
+            -d: only directory
+            -l: show attribute and authority
+            example: ls -al
+        ls [--color={never, auto, always}] <dir>
+        ls [--full-time] <dir>
+
+        cd [path]: change working directory
+
+        pwd [-P]: print working directory[really path, not link path]
+
+        mkdir [-mp] <directory>: create a directory
+            -m: authority of config
+            -p: create a directory and it's parents
+            example: mkdir -m 770 test
+
+        rmdir [-p] <directory>: remove the directory[and parent if it is empty]
+
+        rm [-fir] <file|directory>: remove
+            -f: force, not send warn
+            -i: wait input signal
+            -r: remove and its children
+
+        cp [-adfilprsu] <source> <destination>: copy the file from source to destination
+        cp [options] source 1 source2 ... directory
+            -a: as -pdr
+            -d: if source is link file, and copy link
+            -f: force copy, if file exist but can't open, remove it and try again
+            -i: if destination exist, will is asking before cover
+            -l: create hard link, not file itself
+            -p: copy with its property, usually be used back-up
+            -r: copy and its children, usually be used copy directory
+            -s: symbolic link, fast file
+            -u: update destination
+
+        mv [-fiu] <source> <destination>: move file or directory, or rename
+            -f: force, if destination is exist, will corver it and never send warn
+            -i: ask before corver
+            -u: update
+
+    checkout file:
+        cat [-AbEnTv] <file>:show detail of the file, begin with first
+            -A: as -vET, show all specially char
+            -b: show line number, not blank line
+            -E: show end $
+            -n: show all line number, not with -b
+            -T: if has [tab] will show with ^|
+            -v: show some specially char
+
+        tac <file>:like as cat, but this is begin with finally
+
+        nl [-bnw] <file>: show line number
+
+        more: roll the page
+            when roll the page, you can press some key:
+                space: next page
+                Enter: next line
+                /string: search the [string] in current page
+                :f: show file name and line number
+                q: quit
+                b|[ctrl]-b:roll back prior page
+
+        less: like more
+            press key:
+                space: next page
+                pagedown: next page
+                pageup: next page
+                /string: search with next page
+                ?string: search with prior page
+                n|N: search again with / or ?
+                q:quit
+
+        head [-n number] <file>: get some line of file
+
+        tail [-n number] <file>: get some line of file and begin with finally
