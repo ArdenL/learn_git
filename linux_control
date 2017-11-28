@@ -77,6 +77,8 @@ Linux operation command：
             -i: ask before corver
             -u: update
 
+        tar [-xjvf] <file>: releases compressed file
+
     checkout file:
         cat [-AbEnTv] <file>:show detail of the file, begin with first
             -A: as -vET, show all specially char
